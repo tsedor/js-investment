@@ -1,0 +1,221 @@
+/* Color Theme Swatches in Hex */
+$grey: #BBBBBB;
+$primary: #495F8C;
+$red: #ff0000;
+$white: #FFFFFF;
+.Architektura-1-hex { color: #495F8C; }
+.Architektura-2-hex { color: #E9EFF2; }
+.Architektura-3-hex { color: #D9BE6C; }
+.Architektura-4-hex { color: #D9D0BF; }
+.Architektura-5-hex { color: #594A3C; }
+
+/* Color Theme Swatches in RGBA */
+.Architektura-1-rgba { color: rgba(73, 95, 140, 1); }
+.Architektura-2-rgba { color: rgba(233, 239, 242, 1); }
+.Architektura-3-rgba { color: rgba(217, 190, 108, 1); }
+.Architektura-4-rgba { color: rgba(217, 208, 191, 1); }
+.Architektura-5-rgba { color: rgba(89, 74, 60, 1); }
+@mixin textShadow {
+  text-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  font-family: raleway, sans-serif;
+}
+.container {
+  height: 100%;
+  overflow: hidden;
+}
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  &__logo {
+    padding: .6em;
+    &--image {
+      width: 100px;
+    }
+  }
+  &__menu {
+    cursor: pointer;
+    margin: 0 20px 0 0;
+    padding: 10px;
+    &--line {
+      background-color: $white;
+      height: 2px;
+      width: 30px;
+      &:nth-child(2) {
+        margin: 8px 0 8px 10px;
+        transition: all .2s ease-in;
+        width: 20px;
+      }
+    }
+    &:hover {
+      .header__menu--line:nth-child(2) {
+        margin: 8px 0;
+        width: 30px;
+      }
+    }
+  }
+}
+.loader {
+  align-items: center;
+  background-color: $white;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  &__logo {
+    animation: 2s ease-in blink infinite;
+    filter: brightness(0);
+    height: 132px;
+    width: 256px;
+  }
+}
+.scroll {
+  border: 1px $white solid;
+  border-radius: 7px;
+  bottom: 20px;
+  height: 28px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 14px;
+  &__dot {
+    animation: dot 2s ease-in-out infinite;
+    background-color: $red;
+    border-radius: 2px;
+    height: 4px;
+    margin: 4px auto 0 auto;
+    width: 4px;
+  }
+}
+.slider {
+  height: 100%;
+  position: relative;
+  &__dots {
+    color: $white;
+    list-style: none;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 12;
+    &--item {
+      align-items: center;
+      color: $grey;
+      display: flex;
+      font-size: 14px;
+      font-weight: 300;
+      height: 24px;
+      justify-content: center;
+      letter-spacing: 1px;
+      margin: 4px 0;
+      transition: all .5s ease-in;
+      width: 25px;
+    }
+    &--active {
+      color: $white;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    &:nth-child(2) {
+      z-index: 11;
+    }
+    &__content {
+      color: $white;
+      left: 8em;
+      max-width: 800px;
+      padding: 20px;
+      position: relative;
+      top: 65%;
+      @media (max-width: 950px) {
+        left: 2em;
+        max-width: 80%;
+        top: 55%;
+      }
+    }
+    &__title {
+      @include textShadow;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 36px;
+      margin: 0;
+      overflow: hidden;
+      p {
+        margin: 0 10px 0 0;
+      }
+    }
+    &__subtitle {
+      @include textShadow;
+      font-weight: 300;
+      margin: 0;
+      padding: 20px 0;
+    }
+    &::before {
+      background-position: center;
+      background-size: cover;
+      content: '';
+      filter: brightness(.5);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+    &:nth-child(2)::before {
+      background-image: url(./img/slide1.jpg);
+    }
+    &:nth-child(3)::before {
+      background-image: url(./img/slide2.jpg);
+    }
+    &:nth-child(4)::before {
+      background-image: url(./img/slide3.jpg);
+    }
+  }
+}
+@keyframes backgroundZoom {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes dot {
+  0% {
+    margin: 4px auto 0 auto;
+  }
+  50% {
+    margin: 10px auto 0 auto;
+  }
+  100% {
+    margin: 4px auto 0 auto;
+  }
+}

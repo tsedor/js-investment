@@ -1,0 +1,19 @@
+{
+  "name": "jsinvestment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "tsedor <itsme199@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.2.6",
+    "normalize.css": "^8.0.1"
+  },
+  "scripts": {
+    "start": "parcel index.html -p 3000",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.26.5"
+  }
+}
