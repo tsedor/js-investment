@@ -157,8 +157,14 @@ body {
       font-size: 36px;
       margin: 0;
       overflow: hidden;
+      span {
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+      }
       p {
         margin: 0 10px 0 0;
+        height: 40px;
       }
     }
     &__subtitle {
