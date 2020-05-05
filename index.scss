@@ -37,7 +37,7 @@ body {
   width: 100%;
   z-index: 12;
   &__logo {
-    padding: .6em;
+    padding: 20px;
     &--image {
       width: 100px;
     }
@@ -112,6 +112,7 @@ body {
     &--item {
       align-items: center;
       color: $grey;
+      cursor: pointer;
       display: flex;
       font-size: 14px;
       font-weight: 300;
