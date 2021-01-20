@@ -5,7 +5,7 @@
   "author": "tsedor <itsme199@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "normalize.css": "^8.0.1"
   },
   "scripts": {
